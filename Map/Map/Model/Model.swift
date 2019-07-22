@@ -7,31 +7,28 @@
 //
 
 import Foundation
+import MapKit
 
-struct Places {
-    var courses: [Courses]
-}
-
-struct Courses {
-    var branches: [Branches]
-    var contacts: [Contacts]
+struct Courses: Decodable {
+    var branches: [Branches]?
+    var contacts: [Contacts]?
     var description: String?
     var name: String?
     var rating: Float?
 }
 
-struct Branches {
+struct Branches: Decodable {
     var address: String?
-    var location: Location
+    var location: Location?
     var phone: String?
 }
 
-struct Location {
+struct Location: Decodable {
     var latitude: String?
     var longitude: String?
 }
 
-struct Contacts: Codable {
+struct Contacts: Decodable {
     var data: String?
 }
 

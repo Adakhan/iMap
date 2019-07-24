@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,28 +15,97 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W7R-mq-Wz7">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="epn-m4-7px"/>
+                                </connections>
                             </mapView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-vz-Thb">
+                                <rect key="frame" x="167.66666666666666" y="366" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Q9c-tF-ZLJ"/>
+                                    <constraint firstAttribute="height" constant="40" id="dGw-52-SMN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9w-z3-6qr">
+                                <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="b9p-HL-rug"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Vp1-V8-ln3">
+                                <rect key="frame" x="295" y="569" width="60" height="139"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRx-ox-hqo">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <color key="backgroundColor" red="0.87657314538955688" green="0.60170334577560425" blue="0.36858582496643066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="LXS-qp-EPd"/>
+                                            <constraint firstAttribute="height" constant="60" id="Wcz-52-HdR"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="walk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="walkButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1AK-oO-qfC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtI-F5-YrD">
+                                        <rect key="frame" x="0.0" y="79" width="60" height="60"/>
+                                        <color key="backgroundColor" red="0.19553819298744202" green="0.74398165941238403" blue="0.65107792615890503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="REO-uN-iTz"/>
+                                            <constraint firstAttribute="width" constant="60" id="wkR-tq-fJL"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="auto-1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="autoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OfX-sp-eu9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="W7R-mq-Wz7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5sZ-Cf-WIa"/>
-                            <constraint firstItem="W7R-mq-Wz7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Add-NC-lRC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="W7R-mq-Wz7" secondAttribute="bottom" id="DAG-Wi-Tew"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W7R-mq-Wz7" secondAttribute="trailing" id="y06-sY-FKU"/>
+                            <constraint firstItem="kZe-vz-Thb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="2wm-rn-mkX"/>
+                            <constraint firstItem="W7R-mq-Wz7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5sX-gO-mTd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="T9w-z3-6qr" secondAttribute="bottom" id="6Yr-N4-qRv"/>
+                            <constraint firstItem="T9w-z3-6qr" firstAttribute="top" secondItem="Vp1-V8-ln3" secondAttribute="bottom" constant="20" id="Cmk-XP-fGg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T9w-z3-6qr" secondAttribute="trailing" id="IK9-wt-LkG"/>
+                            <constraint firstItem="kZe-vz-Thb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PcF-VJ-lZU"/>
+                            <constraint firstItem="W7R-mq-Wz7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YYl-tH-sPn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="W7R-mq-Wz7" secondAttribute="bottom" id="ezu-dx-ZIz"/>
+                            <constraint firstItem="W7R-mq-Wz7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fdf-dZ-QSI"/>
+                            <constraint firstItem="T9w-z3-6qr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fwe-TE-NSA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vp1-V8-ln3" secondAttribute="trailing" constant="20" id="qIS-vX-XJu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="T9w-z3-6qr" id="tIh-G1-UgO"/>
+                        <outlet property="autoButton" destination="wtI-F5-YrD" id="G4K-Td-rb2"/>
                         <outlet property="mapView" destination="W7R-mq-Wz7" id="5LQ-Tl-iAP"/>
+                        <outlet property="walkbutton" destination="zRx-ox-hqo" id="5ta-M7-LKP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="128.57142857142858"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Pin" width="16" height="46"/>
+        <image name="auto-1" width="32" height="32"/>
+        <image name="walk" width="32" height="32"/>
+    </resources>
 </document>
